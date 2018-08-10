@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Intro to Javascript</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="index.html"><img class="img-responsive" src="img/geekwise_owl.png" alt="geekwise owl logo"></a></div>
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav nav-pills navbar-nav pull-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Days <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li role="presentation"><a href="one.html">dayOne</a></li>
+                            <li role="presentation"><a href="two.html">dayTwo</a></li>
+                            <li role="presentation"><a href="three.html">dayThree</a></li>
+                            <li role="presentation"><a href="four.html">dayFour</a></li>
+                            <li role="presentation"><a href="five.html">dayFive</a></li>
+                            <li role="presentation"><a href="six.html">daySix</a></li>
+                            <li role="presentation"><a href="seven.html">daySeven</a></li>
+                            <li role="presentation"><a href="eight.html">dayEight</a></li>
+                            <li role="presentation"><a href="nine.html">dayNine</a></li>
+                            <li role="presentation"><a href="ten.html">dayTen</a></li>
+                            <li role="presentation"><a href="eleven.html">dayEleven</a></li>
+                            <li role="presentation"><a href="final.html">finalProject</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <h2 class="text-center">Intro to JavaScript – Final Project</h2>
+    <h4 class="text-center">Geekwise Academy</h4>
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+            <h4>Project Structure</h4>
+            <p>Before we begin lets outline the project folder structure, you should all have an empty folder created called TodoApp. In the folder, create a css folder and a js folder. Open up Atom and under the file menu select <em>Add Project Folder</em> and navigate to your "TodoApp" project folder. Set up your project as a Github repo.
+            Now that your folders are created and your github repo is set up, create an index.html file in the main directory. Also, create a scripts.js file in the js folder.
+            Your project folder structure should look like this.</p>
+            <pre>
+                <code>
+                    TodoApp/
+                    |--css/
+                    | |--style.css
+                    |
+                    |--js/
+                    | |--scripts.js
+                    |
+                    |--index.html
+                </code>
+            </pre>
+            <p>Every project needs a file structure and this is just the most basic one you will use when creating a simple Vanilla JavaScript Application. The next thing to do is to think about what we’re building, and how to build it. Piece by piece.<p>
+            <h4 class="text-bold">Project Overview</h4>
+            <p>The first thing we should always do is think about what the desired result we want is. I’m going to give a brief description of what the application should do. Along with some details and specifics about each of the features this TodoApp should have. How you accomplish the task is completely up to you, there are a million ways to skin a cat, or in a development sense, a million ways to code the same thing.
+            While developing this Todo app please keep in mind Edge Casing, for example stopping a user from adding an empty Todo.
+            Keep in mind you may use any frontend framework to help you make the UI fancy. Actually its encouraged and extra points will be given.
+            TodoApp simply allows users to type in any given task and add it to a list of things to do. After a Todo task is added a user should be able to edit, delete or complete the task.</p>
+            <h4 class="text-bold">User Interface</h4>
+            <p>When building an application the first thing you always do is built out the user interface. Most developers like to draw out on paper or in Photoshop some mockup's of what the app might look like in order to help them lay out the skeleton design of the HTML.
+            The user interface for a Todo app is relatively simple, we need an input field in order to type what to do in, we need a list to hold our Todo items in and we need a button to actually tell the text in the input field to get inserted into the list of items. This design logic however only takes care of adding some tasks to a list of items.
+            In order to add the functionality to edit, remove or complete a Todo we need to think on a more specific level, what are we editing, removing or completing? The Todo item right? Aren't we going to need some type of way to call some function for each of these features? So to fine tune our UI requirements we'll need a list item with a checkbox inside it, and a few buttons one to edit on to delete.
+            At this point your UI requirements are complete and you can start building the JavaScript Logic.</p>
+            <h4 class="text-bold">JavaScript Logic</h4>
+            <p>This is the hard part: it’s time to use the elements (html) you created to make your Todo app do what it needs to do. Hopefully you assigned each of your main elements that your users will interact with some ID's so you can target them in your JavaScript. If not do so now, and lets go over what each UI Element that calls a function will do.</p>
+            <ul>
+                <li><b>Input Field:</b> The input field where the user will type in what they want to do. This field should be cleared when its text is added to the list of things Todo.</li>
+                <li><b>Add Todo Button:</b> This is the button that will call our function to add a new Todo to the list. The logic behind this function is to dynamically create a new Todo Item list item element.</li>
+                <li><b>Todo Item (Checkbox):</b> When a user checks this you should add some kind of class to the list item that strikes through the text and makes the text lighter. Don’t allow it to be edited if the box is checked (So hide the edit button).</li>
+                <li><b>Todo Item (Edit Button):</b> This button will take the text of the Todo item and put it into a textbox, allowing ourselves to edit it then turn it back into plain text when you hit enter. So if you think about it, you’re creating an input element, with an event listener listening for when the user hit the enter key. (Do some google'ing).</li>
+                <li><b>Todo Item (Delete Button):</b> Fairly simple, remove the entire List Item this button is within. How can you target the parent element of the button? The user should be prompted if they are sure they want to delete the Todo before you actually delete it.</li>
+            </ul>
+        </div>
+    </div>
+    <!-- <p>What's that you say? MORE?! Ok, but I'll warn you, it aint easy!</p>
+    <p><a href="super-final.html">Challenge Final</a></p> -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

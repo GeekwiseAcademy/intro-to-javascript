@@ -1,2 +1,3 @@
-# intro-to-javascript
-Intro to Javascript Curriculum
+# Intro to Javascript Curriculum
+
+This curriculum covers the following topics:

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Intro to Javascript</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- <body class="show-reminder" id="day_nine"> -->
+    <header>
+        <div class="logo"><a href="index.html"><img class="img-responsive" src="img/geekwise_owl.png" alt="geekwise owl logo"></a></div>
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav nav-pills navbar-nav pull-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Days <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li role="presentation"><a href="one.html">dayOne</a></li>
+                            <li role="presentation"><a href="two.html">dayTwo</a></li>
+                            <li role="presentation"><a href="three.html">dayThree</a></li>
+                            <li role="presentation"><a href="four.html">dayFour</a></li>
+                            <li role="presentation"><a href="five.html">dayFive</a></li>
+                            <li role="presentation"><a href="six.html">daySix</a></li>
+                            <li role="presentation"><a href="seven.html">daySeven</a></li>
+                            <li role="presentation"><a href="eight.html">dayEight</a></li>
+                            <li role="presentation"><a href="nine.html">dayNine</a></li>
+                            <li role="presentation"><a href="ten.html">dayTen</a></li>
+                            <li role="presentation"><a href="eleven.html">dayEleven</a></li>
+                            <li role="presentation"><a href="final.html">finalProject</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Custom Objects</h2>
+            </aside>
+            <main class="col-sm-9">
+                <ul class="points">
+                    <li>We've talked a lot of objects in JavaScript, and you've probably heard me say "Everything in JS is an object! (almost)" and thought, "...huh?"</li>
+                    <li>Time to answer those questions!</li>
+                    <li>To understand what I mean when I say (almost) everything is an object, we have to understand a bit more about JavaScript as compared to other languages.</li>
+                    <li>The saying comes from the fact that JS uses prototype-based inheritance rather than class-based (we'll get there, don't worry!) This means that everything we create using the JS constructor objects (we learned those on day 2) inherits certain things from a prototype which is defined by the JS base language.</li>
+                    <li>Let's see what I'm talking about in action:
+                        <ol>
+                            <li>Create a new string using JavaScript's String object (set a var to new String('some string here');</li>
+                            <li>Console.log the var you made.</li>
+                            <li>Now, call <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf">Object.getPrototypeOf()</a>, passing your var into the method inside of a console.log.</li>
+                            <li>What you see is the prototype that your newly created string inherited from.</li>
+                        </ol>
+                    </li>
+                    <li> Anatomy of an object
+  <pre><code>
+  var myObj <span style="color: #e40007" class="fade-1">[optional var declaration]</span> = {
+     <span style="color: #e40007" class="fade-2">[key]</span>firstName: <span style="color: green" class="fade-3">[value]</span>"Ryeker",<span style="color: yellow" class="fade-4">[property, separated from other properties by comma]</span>
+  };<span style="color: #e40007" class="fade-5">[Enclosed by curly brackets]</span>
+  <span style="color: #00ffbb" class="fade-6">[keys are <em>never</em> strings, while values can be any of the data types.]</span>
+  </code></pre>
+                    </li>
+                    <li>This is different from most other languages for many reasons.</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes">Prototypes</a> are a chain of parent objects that trace all the way back to the native JS Object prototype. Our custom object are said to inherit from their prototype, but what does that mean?</li>
+                    <li>Let's try it:
+                        <ol>
+                            <li>Create a new object in your js file
+    <pre><code>
+    var myObj = {
+        firstName: "Ryeker",
+        lastName: "Herndon"
+    }; //Note that this is only one way to make an object!
+    </code></pre>
+                            </li>
+                            <li>Now open in the browser and in your console, type myObj.</li>
+                            <li>You should see your two properties (firstName and lastName) but what are these others?</li>
+                            <li>They are the inherited members of the Object prototype. Use your down arrow to scroll to the __proto__ option and hit enter on your keyboard. You should see the Object constructor function logged out for you. Poke around and see if you recognize anything.</li>
+                        </ol>
+                    </li>
+                    <li>There's a lot going on behind the scenes that JavaScript does for us when we create vars, lets, and consts, but other than primitives (remember those?) all of our variables, no matter what their type, are created using a base Object.</li>
+                    <li>Let's see this in action:
+                        <ol>
+                            <li>Create new instances of a String, an Array, an Object, a Boolean, and a Number.</li>
+                            <li>In your console, look up the __proto__ of each of these.</li>
+                            <li>Notice the constructor member of the prototype? That is the function that JS uses to create our vars when we call 'new' on them. Pretty AWESOME!</li>
+                        </ol>
+                    </li>
+                    <li>To understand the awesomeness of JS prototypal inheritance, you have to understand classical inheritance.</li>
+                    <li>TL;DR: In most other languages, rather than have prototypes that your new objects/vars inherit from, they are tied inextricably to class instances. If anything on a parent class is changed or removed, in those other languages, every child that referred to something removed on the parent would break. In JS, nothing breaks! The reference just doesn't work anymore. COOL!</li>
+                </ul>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Constructor Functions</h2>
+            </aside>
+            <main class="col-sm-9">
+                <ul class="points">
+                    <li>Ok, so we know how our objects are getting their properties via prototype. But how can we improve upon objects in a custom way?</li>
+                    <li>Creating Custom Methods: use <a href="https://www.w3schools.com/js/js_object_prototypes.asp">Object Prototypes</a>!</li>
+                    <li>Let's try it!
+                        <ul>
+                            <li>Create a prototype for a user.</li>
+                            <li>Write a function that prompts for a user name and password</li>
+                            <li>after the user name and password are stored in vars, have the function call new on your prototype.</li>
+                            <li>Log out the new user and take a look!</li>
+                        </ul>
+                    </li>
+                    <li>How can we use this in our todo app?</li>
+                </ul>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Take Home</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p>Continue work on final project. The HTML and CSS should be pretty far along by this point. Think about how you can start to use the DOM functions we’ve learned about in your project.</p>
+                </ul>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Intro to Javascript</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- <body class="show-reminder" id="day_two"> -->
+    <header>
+        <div class="logo"><a href="index.html"><img class="img-responsive" src="img/geekwise_owl.png" alt="geekwise owl logo"></a></div>
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav nav-pills navbar-nav pull-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Days <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li role="presentation"><a href="one.html">dayOne</a></li>
+                            <li role="presentation"><a href="two.html">dayTwo</a></li>
+                             <li role="presentation"><a href="three.html">dayThree</a></li>
+                            <li role="presentation"><a href="four.html">dayFour</a></li>
+                            <li role="presentation"><a href="five.html">dayFive</a></li>
+                            <li role="presentation"><a href="six.html">daySix</a></li>
+                            <li role="presentation"><a href="seven.html">daySeven</a></li>
+                            <li role="presentation"><a href="eight.html">dayEight</a></li>
+                            <li role="presentation"><a href="nine.html">dayNine</a></li>
+                            <li role="presentation"><a href="ten.html">dayTen</a></li>
+                            <li role="presentation"><a href="eleven.html">dayEleven</a></li>
+                            <li role="presentation"><a href="final.html">finalProject</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2>JS: Basics</h2>
+            </div>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>JS data types</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p>There are 6 <b>data types</b> in JavaScript:</p>
+                <ul class="points">
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/string">String</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/number">Number</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/boolean">Boolean</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/undefined">Undefined</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/null">Null</a></li>
+                </ul>
+                <p>These are referred to as <em>primitives</em> i.e. they are what they are, you can't manipulate them the way you can their object counterparts (below.)</p>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+              <h2>One more thing about strings...</h2>
+            </aside>
+            <main class="col-sm-9">
+              <p><b>What if we want to create a string using statically typed text and variables together?</b></p>
+              <p>There are two ways:</p>
+              <ul>
+                <li>
+                  <pre><code>
+    var myName = "Ryeker";
+
+    alert('Hello, ' + myName + '!'); //ES5
+
+    alert(`Hello, ${myName}!`); //ES6
+                  </code></pre>
+                </li>
+              </ul>
+              <p>We will be using ES6-style string interpolation.</p>
+            </main>
+          </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Quick Overview: Blocks</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p>In order to understand the rest of this day's examples, you'll need to grasp the concept of a "block" of code.</p>
+                <ul class="points">
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/block">Blocks</a> are little more than grouped code that (almost always) forms something called <em>scope</em>.</li>
+                    <li>We will deep dive into scope a future class, but for now, understand that scope is like a boundary that limits your JS code to one area.</li>
+                </ul>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Variables &amp; Native JS Objects</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p>var, let, const: the variable types</p>
+                <ul class="points">
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var">var</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let">let</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const">const</a></li>
+                </ul>
+                <p>I mentioned on day 1 that JavaScript is "Object Oriented." But what does that mean?</p>
+                <ul class="points">
+                    <li>Everything in JS is an "object", or a series of pre-defined, easily manipulatable descriptions of something.</li>
+                    <li>We will dive deep on this subject in-depth in week 5, but for now, let's take a look at some predefined objects in JavaScript</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a></li>
+                    <li><span onclick="alert(new Date())" class="js-link">new Date()</span></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math">Math</a></li>
+                    <li><span class="js-link" onclick="alert(Math.floor(Math.random() * (1000 - 1 +1)) + 1)">Give me a random integer between 1 and 1000!</span></li>
+                    <li><span class="js-link" onclick="alert(Math.PI)">Math.PI()</span></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></li>
+                    <li><span class="js-link" onclick="alert(String('WOW! The cheese is good!'))">new String()</span> </li>
+                    <li><span class="js-link" onclick="alert(String('WOW! The cheese is good!').length)">Check the length of that string</span></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a></li>
+                    <li><span class="js-link" onclick="alert(Number('0o11'))">Number('0o11')</span></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Boolean</a></li>
+                    <li><span class="js-link" onclick="alert(new Boolean(false))">What a bunch of bool...</span></li>
+                    <small>**Almost always use the primitive form of Boolean...</small>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Arrays</a></li>
+                    <li><span class="js-link" onclick="alert(new Array('apple', 42, 'Yoda'))">new Array('apple', 42, 'Yoda');</span></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></li>
+                    <li><span class="js-link" onclick="findTruth()">Click to know truth!</span></li>
+                    <small>don't confuse primitives with their JS object counter-parts!</small>
+                </ul>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Alert, confirm, prompt</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p>There are many ways to interact with your users. Here are the basic 3:</p>
+                <ul class="points">
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/alert">alert()</a>: Simply gives the user a message</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm">confirm()</a>: Presents the user with a choice and returns a Boolean</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt">prompt()</a>: Presents the user with a question and returns the user's input</li>
+                </ul>
+                <p>These are all <em>functions</em>. What's that?</p>
+                <p> We will get much deeper into functions in the following class sessions, but for now, understand a function is nothing more than some grouped JavaScript behavior that performs a specific set of actions. You <b>call</b> a function. It <b>returns</b> a value.</p>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Take Home</h2>
+            </aside>
+            <main class="col-sm-9">
+                <ol class="points">
+                    <li>On a new branch called takehome-day2, Write a program that:
+                        <ul>
+                            <li>Asks for the user's first name</li>
+                            <li>Asks for the user's last name</li>
+                            <li>Logs the user's first name to the console</li>
+                            <li>Alerts the user's last name</li>
+                            <li><span class="text-danger">*</span>Asks for the user's birthday, confirms whether the birthday recieved is correct, and alerts the resulting birthday</li>
+                        </ul>
+                    </li>
+                    <li>Merge your takehome-day2 branch with gh-pages so I can test it</li>
+                    <li>Send me the url of the gh-pages on Slack</li>
+                </ol>
+                <p class="text-danger">* Extra points if you use JavaScript's Date object for the birthday.</p>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

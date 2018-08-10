@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Intro to Javascript</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- <body class="show-reminder" id="day_five"> -->
+    <header>
+        <div class="logo"><a href="index.html"><img class="img-responsive" src="img/geekwise_owl.png" alt="geekwise owl logo"></a></div>
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav nav-pills navbar-nav pull-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Days <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li role="presentation"><a href="one.html">dayOne</a></li>
+                            <li role="presentation"><a href="two.html">dayTwo</a></li>
+                            <li role="presentation"><a href="three.html">dayThree</a></li>
+                            <li role="presentation"><a href="four.html">dayFour</a></li>
+                            <li role="presentation"><a href="five.html">dayFive</a></li>
+                            <li role="presentation"><a href="six.html">daySix</a></li>
+                            <li role="presentation"><a href="seven.html">daySeven</a></li>
+                            <li role="presentation"><a href="eight.html">dayEight</a></li>
+                            <li role="presentation"><a href="nine.html">dayNine</a></li>
+                            <li role="presentation"><a href="ten.html">dayTen</a></li>
+                            <li role="presentation"><a href="eleven.html">dayEleven</a></li>
+                            <li role="presentation"><a href="final.html">finalProject</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+    <div class="row section">
+        <aside class="col-sm-3">
+            <h2>Review Take Home</h2>
+        </aside>
+        <main class="col-sm-9">
+            <ol class="points">
+                <li>How do we even do it?</li>
+                <li>What was your result?</li>
+            </ol>
+        </main>
+    </div>
+    <div class="row section">
+        <aside class="col-sm-3">
+            <h2>Functions</h2>
+        </aside>
+        <main class="col-sm-9">
+            <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions">Functions</a></p>
+            <ul>
+                <li>Anonymous vs. Named
+                    <ul>
+                        <li>Anonymous Functions</li>
+                        <li>Unnamed, and thus cannot refer to itself (for purposes of recursion or debugging)</li>
+                        <li>Named Functions</li>
+                        <li>Have a name and thus can refer to themselves, along with several other goodies we'll talk about in a minute...</li>
+                    </ul>
+                </li>
+                <li>General Requirements:
+                    <ul>
+                        <li>The function keyword followed by...</li>
+                        <li>The name of the function (if named)</li>
+                        <li>A list of arguments to the functions enclosed in parentheses and separated by commas</li>
+                        <li>The statements that define the functions enclosed in curly brackets</li>
+                    </ul>
+                </li>
+                <li>Function declaration vs. function expression:
+                    <pre><code>
+    //FUNCTION EXPRESSION:
+    var logStuff = function(param) {
+       console.log(`${param} was passed in`);
+    };
+
+    //FUNCTION DECLARATION
+    function multiply(num, secondNum) {
+        return num * secondNum;
+    };
+    //****IMPORTANT: Function hoisting only works with function declaration and not with function expression.
+
+                    </code></pre>
+                </li>
+                <li>Scoping/Closure: variables declared inside can't be seen outside, but inside can access all variables declared in the same/parent scopes.</li>
+                <li>Recursive Functions: Function that calls itself, performs just like a loop.</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">Arrow Functions: </a>
+                    <ul>
+                        <li>New to ES6</li>
+                        <li>Cannot be used as contructors (more on this later)</li>
+                        <li>No access to lexical <em>this</em></li>
+                        <li>
+    <pre><code>
+        //BASIC SYNTAX
+
+        (arg1, arg2) => {
+            // function body here
+        }
+
+        //OR//
+
+        let multiply = (arg1, arg2) => return arg1 * arg2;
+
+        //IF THERE'S ONLY 1 ARGUMENT:
+
+        arg1 => {alert(arg1)}
+
+        //OR//
+
+        arg1 => alert(arg1);
+
+        //IF THERE ARE NO ARGUMENTS:
+
+        () => {
+            console.log('Hello there!');
+        }
+    </code></pre>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr">.substr()</a></li>
+            </ul>
+        </main>
+    </div>
+    <div class="row section">
+        <aside class="col-sm-3">
+            <h2>Try it out!</h2>
+        </aside>
+        <main class="col-sm-9">
+            <p>On your day5 branch, write a function that calculates a dog's age. It should:</p>
+            <ul>
+                <li>Accept 1 argument (age of the dog in years).</li>
+                <li>Return the age of the dog using the conversion rate of 1 year to 7 "dog" years.</li>
+                <li>Alert the answer.</li>
+            </ul>
+            <p>Make sure you're checking for edge-cases!</p>
+            <p>Now, write a function that tells you what a "lifetime supply" will be for any product. It should:</p>
+            <ul>
+                <li>Accept 2 arguments (age of person now, amount of product per day).</li>
+                <li>Calculate the supply needed for the rest of the user's life, based on a constant max age of 80.</li>
+                <li>Alert the answer in this format: "You will need x to last you until you're y.</li>
+                <li>BONUS: write it to accept a dynamic max age.</li>
+            </ul>
+        </main>
+    </div>
+    <div class="row section">
+        <aside class="col-sm-3">
+            <h2>Method vs. Function</h2>
+        </aside>
+        <main class="col-sm-9">
+            <p>There is a basic, but important difference</p>
+            <ul>
+                <li>A <b>function</b> is a piece of code that is called by name. It can be passed data to operate on (i.e. the parameters) and can optionally return data (the return value). All data that is passed to a function is explicitly passed.</li>
+                <li>A <b>method</b> is a piece of code that is called by a name that is associated with an object. In most respects it is identical to a function except for two key differences:
+                    <ol>
+                        <li>A method is implicitly passed the object on which it was called.</li>
+                        <li>A method is able to operate on data that is contained within the class (remembering that an object is an instance of a class - the class is the definition, the object is an instance of that data).</li>
+                    </ol>
+                </li>
+            </ul>
+            <p>We will cover this more in-depth in a future class, but for now, remember the difference.</p>
+        </main>
+    </div>
+    <div class="row section">
+        <aside class="col-sm-3">
+            <h2>Take Home</h2>
+        </aside>
+        <main class="col-sm-9">
+            <p>On your takehome-day5 branch write a program that uses functions to:</p>
+            <ol class="points">
+                <li>Take a number and return the square of that number (power of 2).</li>
+                <li>If a non-number argument is passed into the function, alert NaN and prompt for another response</li>
+                <li>In a second function, capitalize the first letter of a string and add a period (.) to the end of the string if it doesn't already end with a period</li>
+                <li>Create a string that will flip the position of the first and second half of a string. For example, the string “abcdef” would be returned as “defabc”. <small> Hint: use substring.</small></li>
+                <li>BONUS: If you are bored by all that, write a function that checks if a given string is a palindrome.</li>
+            </ol>
+        </main>
+    </div>
+</div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

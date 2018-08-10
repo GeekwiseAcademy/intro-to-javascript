@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Intro to Javascript</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- <body class="show-reminder" id="day_three"> -->
+    <header>
+        <div class="logo"><a href="index.html"><img class="img-responsive" src="img/geekwise_owl.png" alt="geekwise owl logo"></a></div>
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav nav-pills navbar-nav pull-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Days <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li role="presentation"><a href="one.html">dayOne</a></li>
+                            <li role="presentation"><a href="two.html">dayTwo</a></li>
+                            <li role="presentation"><a href="three.html">dayThree</a></li>
+                            <li role="presentation"><a href="four.html">dayFour</a></li>
+                            <li role="presentation"><a href="five.html">dayFive</a></li>
+                            <li role="presentation"><a href="six.html">daySix</a></li>
+                            <li role="presentation"><a href="seven.html">daySeven</a></li>
+                            <li role="presentation"><a href="eight.html">dayEight</a></li>
+                            <li role="presentation"><a href="nine.html">dayNine</a></li>
+                            <li role="presentation"><a href="ten.html">dayTen</a></li>
+                            <li role="presentation"><a href="eleven.html">dayEleven</a></li>
+                            <li role="presentation"><a href="final.html">finalProject</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Review of take home</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p>How did you do?</p>
+                <ul class="points">
+                    <li>-Did you get extra points?</li>
+                </ul>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Operators</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p>Up to this point, we have learned about data types, JS native objects, and some of the methods that we have access to with native JS. But when do we get to <em>do</em> stuff?</p>
+                <p>Now! I have mentioned that you have to start thinking like a computer. In order to help us, we have <b><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators">logical operators</a></b>!</p>
+                <ul class="points">
+                    <li>Logical and ( && )</li>
+                    <li>Logical or ( || )</li>
+                    <li>Logical not ( ! )</li>
+                    <small>I am !tooOld to enjoy Star Wars!</small>
+                </ul>
+                <p>Truthy and Falsy</p>
+                <ul>
+                    <li>In logical operations, everything is evaluated to either <b><a href="https://developer.mozilla.org/en-US/docs/Glossary/truthy">truthy</a></b> (a Boolean value for true) or <b><a href="https://developer.mozilla.org/en-US/docs/Glossary/falsy">falsy</a></b> (a Boolean value for false.)</li>
+                </ul>
+                <p>Great! Now we know when something is true or false. How can we compare values to begin making JavaScript work for us?</p>
+                <p>Enter the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators">comparison operators</a>!</p>
+                <ul>
+                    <li>Loose equal ( == )</li>
+                    <li>Strict equal ( === )</li>
+                    <li>Loose not equal ( != )</li>
+                    <li>Strict not equal ( !== )</li>
+                    <small>Quick note about objects: if you compare two objects that are assigned to two different vars, they will <em>always</em> be not equal.</small>
+                    <li>Greater than ( > )</li>
+                    <li>Less than ( < )</li>
+                    <li>Less than or equal ( <= )</li>
+                    <li>Greater than or equal ( >= )</li>
+                </ul>
+                <!-- IN class: have them compare two strings of type string object -->
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Try it Out</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p>In your day 3 in-class app.js file:</p>
+                <ol class="points">
+                    <li>Declare a variable and set it equal to any string.</li>
+                    <li>Declare a second variable and call <b>new String()</b> on the same string (this will create an instance of a JS string object.)</li>
+                    <li>Use the logical operators to determine if they are <em>strictly equal</em>.</li>
+                    <li>Now use the logical operators to determine if they are <em>loosely</em> equal.</li>
+                    <li>Why did you get the result you got?</li>
+                </ol>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>The dreaded MATHEMATICAL OPERATORS!</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators">Arithmetic Operators</a></p>
+                <ul class="points">
+                    <li>Addition(+), Subtraction(-), Division(/), Multiplication(*)</li>
+                    <li>Modulo(%)</li>
+                    <li>Increment(++) and Decrement(--)</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN">NaN</a></li>
+                    <small>Note: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt">parseInt()</a> can be used to convert strings and floats to integers.</small>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators">Assignment Operators</a></li>
+                    <ul>
+                        <li>+=</li>
+                        <li>-=</li>
+                        <li>*=</li>
+                        <li>/=</li>
+                    </ul>
+                </ul>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Try It Out</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p>Below the previous code your app.js file:</p>
+                <ol class="points">
+                    <li>Prompt for a number value (provide a default of 10)</li>
+                    <li>Prompt for a second number value (provide a default of 10)</li>
+                    <li>Convert the prompted values into integers</li>
+                    <li>Add the numbers together and alert the user with the result</li>
+                </ol>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Control Flow</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p>Control Flow is quite simple: it is how we <em>control</em> what pieces of our code get executed (run).</p>
+                <ol class="points">
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else">if/else</a> is the most basic version of control flow.</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch">Switch statements</a> are another way of controlling flow.</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator">Ternaries</a> are perfect for simple yes or no/ true or false controls. Just don't nest them!</li>
+                </ol>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Try It Out</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p>In your app.js file:</p>
+                <ol class="points">
+                    <li>Asks if the user is over 18</li>
+                    <li>If the  user is over 18, allow them to proceed, otherwise alert the user that they are not old enough.</li>
+                    <li>Now that all your users at this point are at least 18, ask if they are less than 80 years old.</li>
+                    <li>Now ask the users who are between 18 and 80 if they like Star Wars. If they are over 80, ask if they like prunes.</li>
+                    <li>If they say they don't Star Wars, end the program. In all other cases, alert them with a message.</li>
+                </ol>
+
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>A quick word on edge cases</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p>In development (whether front or back end) you have to take edge cases into account. Basically, never trust your user to do what you would expect them to do. If you write a program that needs a string, make sure you check that they gave you a string and not a number or array. If it needs a number, check for that. We'll cover several examples of this in class.</p>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Take Home</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p>On a new takehome-day3 branch, write a program that:</p>
+                <ol class="points">
+                    <li>Prompts your user for their name.</li>
+                    <li>Next, ask the user's favorite color. (Provide the user with the basic 10 colors as options i.e. red, orange, yellow, green, blue, pink, purple, black, white, and grey).</li>
+                    <li>Depending on the color, write 9 different responses for the possible answers. Include the user's name in the response message.</li>
+                </ol>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

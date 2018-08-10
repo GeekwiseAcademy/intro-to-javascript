@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Intro to Javascript</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- <body class="show-reminder" id="day_four"> -->
+    <header>
+        <div class="logo"><a href="index.html"><img class="img-responsive" src="img/geekwise_owl.png" alt="geekwise owl logo"></a></div>
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav nav-pills navbar-nav pull-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Days <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li role="presentation"><a href="one.html">dayOne</a></li>
+                            <li role="presentation"><a href="two.html">dayTwo</a></li>
+                            <li role="presentation"><a href="three.html">dayThree</a></li>
+                            <li role="presentation"><a href="four.html">dayFour</a></li>
+                             <li role="presentation"><a href="five.html">dayFive</a></li>
+                            <li role="presentation"><a href="six.html">daySix</a></li>
+                            <li role="presentation"><a href="seven.html">daySeven</a></li>
+                            <li role="presentation"><a href="eight.html">dayEight</a></li>
+                            <li role="presentation"><a href="nine.html">dayNine</a></li>
+                            <li role="presentation"><a href="ten.html">dayTen</a></li>
+                            <li role="presentation"><a href="eleven.html">dayEleven</a></li>
+                            <li role="presentation"><a href="final.html">finalProject</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Review Take Home</h2>
+            </aside>
+            <main class="col-sm-9">
+                <ol class="points">
+                    <li>What did you use for your nine conditions?</li>
+                    <li>Why?</li>
+                </ol>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Arrays</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Arrays</a> are extremely useful for storing ordered lists of data. Think of them as the lists that most data are organized into in scripting languages.</p>
+                <ul>
+                    <li>Arrays are 0-indexed (start at 0)</li>
+                    <li>values inside can be any data type</li>
+                    <li>each value is separated by a comma</li>
+                    <li>denoted by square brackets( [] )</li>
+                    <li>Have access to methods, much like Strings do.</li>
+                </ul>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Try it out!</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p>On your day4 branch, declare a var and define it with an array containing:</p>
+                <ul>
+                    <li>Your favorite movie of 2017</li>
+                    <li>Your lucky number</li>
+                    <li>Whether or not you are a Star Wars fan (using a Boolean)</li>
+                    <li>The year you graduated high school</li>
+                    <li>console.log the var and the length of the array.</li>
+                </ul>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Accessing members of an array.</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p>Arrays are indexed. This means you can access the members via reference by their numbered index.</p>
+                <pre>
+                    <code>
+                        var favArtists = ['ke$ha', 'Drake', 'Bush', 'Beck'];
+                        alert(favArtists[0]);
+                    </code>
+                </pre>
+                <ul>
+                    <li>Unknown indices will returned undefined</li>
+                    <li>Great! But what methods do we have access to to manipulate this data?</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray">IsArray: Is this an array?</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push?v=a">Push: Add elements to the end</a> of the array</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift">Unshift: Add elements to the beginning</a> of an array</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop">Pop: Remove the last element</a> in an array and return it</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift">Shift: Remove the first element</a> in an array and return it</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice">Splice: Remove elements and optionally add</a>  others. Returns the removed elements in a new array</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice">Slice: make a copy of the original indexes</a> but don't modify the original array</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf">IndexOf: get the index</a> of a member of your array</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf">lastIndexOf: Get the last index</a> of a member of your array</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse">Reverse</a> the order of your array</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">Sort</a> your array</li>
+                </ul>
+                <p>Great! We can manipulate data in an array. But what about more complicated arrays?</p>
+                <ul>
+                    <li>Nested Arrays (or arrays inside of arrays) are also possible.</li>
+                    <li>
+                        <pre>
+                            <code>
+                                <span>
+    var favoriteMovie = ['Star Wars VI', '1983'];
+    var secondFavorite = ['Return of the King', '2003'];
+    var thirdFavorite = ['Equilibrium', '2002'];
+    var myFavoriteMovies = [];
+    myFavoriteMovies.push(favoriteMovie, secondFavorite, thirdFavorite);
+    //Result:
+    [['Star Wars VI', '1983'], ['Return of the King', '2003'], ['Equilibrium', '2002']];
+                                </span>
+                            </code>
+                        </pre>
+                    </li>
+                    <li>Let's get just the years of my favorite movies:<br>
+                        <pre>
+                            <code>
+var movieYears = [];
+movieYears.push(myFavoriteMovies[0][1], myFavoriteMovies[1][1],myFavoriteMovies[2][1]);
+alert(movieYears);
+                            </code>
+                        </pre>
+                    </li>
+                </ul>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Try it out!</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p>In your scripts.js file, create 5 arrays, each with one of your top 5 movies' title and the main character's name</p>
+                <ol>
+                    <li>Add all of these arrays to a final array named favoriteMovies</li>
+                    <li>Create an array with just the titles of your favorite movies and alert it</li>
+                    <li>Create another array with your favorite and least favorite of the top 5 and console.log it.</li>
+                    <li>Check the length of your favoriteMovies array by alerting it.</li>
+                </ol>
+                <p>There is much more you can do with arrays. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods">Read more</a> about array methods here.</p>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Loops</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p>Get loopy! So we know how to store and manipulate data. Great! But how do we perform tasks on these data sets?</p>
+                <p>Why <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration">loops</a>, of course!</p>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/statements/while">While</a> loop</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/statements/for">For</a> loop</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/statements/do...while">Do while</a> loop</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">For Each</a> Loop</li>
+                    <small>Some loops are suited more for objects than for arrays</small>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/statements/for...of">For of </a>loop</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/statements/for...in">For in</a> loop</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#break_statement">Break</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#continue_statement">continue</a></li>
+                </ul>
+                <p>Beware the infinite loops!</p>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Try it out!</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p>Now, using your favoriteMovies array:</p>
+                <ol>
+                    <li>Write a for loop to iterate over the array</li>
+                    <li>Find your favorite movie by searching for the title in the loop</li>
+                    <li>Once the program finds your favorite movie, have it alert the title and year it was made</li>
+                </ol>
+                <p>There is much more you can do with arrays. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Methods">Read more</a> about array methods here.</p>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Take Home</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p>On a takehome-day4 branch of your JS repository, write a program that:</p>
+                <ol class="points">
+                    <li>Creates an array of things you need or want to do this weekend by collecting three todos from the user.</li>
+                    <li>Using a for loop, change the items in the array by adding a value for how many days that item should take.</li>
+                    <small>Hint: which data type is best suited for your todo items, based on what you will need to do to them?</small>
+                    <li>Using a while loop, find the task that will take the longest and log it to the console.</li>
+                    <li>Using a do while loop, add the string 'easy-peasy' to all the tasks other than the one that will take the longest</li>
+                    <li>Finally, alert all the tasks that have 'easy-peasy' in the todo array.</li>
+                </ol>
+            </main>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

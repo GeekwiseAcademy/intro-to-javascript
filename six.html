@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Intro to Javascript</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- <body class="show-reminder" id="day_six"> -->
+    <header>
+        <div class="logo"><a href="index.html"><img class="img-responsive" src="img/geekwise_owl.png" alt="geekwise owl logo"></a></div>
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav nav-pills navbar-nav pull-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Days <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li role="presentation"><a href="one.html">dayOne</a></li>
+                            <li role="presentation"><a href="two.html">dayTwo</a></li>
+                            <li role="presentation"><a href="three.html">dayThree</a></li>
+                            <li role="presentation"><a href="four.html">dayFour</a></li>
+                            <li role="presentation"><a href="five.html">dayFive</a></li>
+                            <li role="presentation"><a href="six.html">daySix</a></li>
+                            <li role="presentation"><a href="seven.html">daySeven</a></li>
+                            <li role="presentation"><a href="eight.html">dayEight</a></li>
+                            <li role="presentation"><a href="nine.html">dayNine</a></li>
+                            <li role="presentation"><a href="ten.html">dayTen</a></li>
+                            <li role="presentation"><a href="eleven.html">dayEleven</a></li>
+                            <li role="presentation"><a href="final.html">finalProject</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Review Take Home</h2>
+            </aside>
+            <main class="col-sm-9">
+                <ol class="points">
+                    <li>End of class example from last class</li>
+                    <li>Using Substring to flip first half and second half of string.</li>
+                </ol>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>What is this DOM you speak of?</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">The DOM</a></p>
+                <ul>
+                    <li>Document Object Model</li>
+                    <li>What is an <a href="https://developer.mozilla.org/en-US/docs/Glossary/API">API</a>?</li>
+                    <li>Ok. So what does that mean for me?</li>
+                    <li><a href="http://www.themostamazingwebsiteontheinternet.com/">Go here</a> and do the following in the console:
+                        <ul>
+                            <li><em>document.all</em></li>
+                            <li><em>window.alert()</em></li>
+                        </ul>
+                    </li>
+                </ul>
+            </main>
+        </div>
+        <div class="row section" style="height: 520px;">
+            <aside class="col-sm-3">
+                <h2>Querying the DOM</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p>There are several methods available to us for querying the DOM.</p>
+                <ul>Some of the older methods are:
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getElementsByTagName">.getElementsByTagName()</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementsByClassName">.getElementsByClassName()</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById">.getElementById()</a></li>
+                    <p>Some of these return arrays, while getElementById returns a single DOM node. This is important when you query the DOM.</p>
+                </ul>
+                <ul>There are newer methods that allow us to query the DOM as well. They are:
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">.querySelector()</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll">.querySelectorAll()</a></li>
+                </ul>
+                <p>Let's try it out!</p>
+                <ul>
+                    <li>Create a function that queries the DOM for the body tag using all of these methods. Log the results to your console.</li>
+                    <li>The function should take 2 arguments: the DOM selector method the user wants to employ and the name of the DOM selector to be searched for.</li>
+                </ul>
+            </main>
+        </div>
+        <div class="row section" style="height: 520px;">
+            <aside class="col-sm-3">
+                <h2>Listening for Events</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p>Now that we know how to target DOM nodes, let's use them dynamically.</p>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/EventListener">Event Listeners</a> allow you to fire certain functionality when your user performs a specific action. </li>
+                    <li>For instance, if you want to alert something when the user clicks on an h1 tag, you could use an event listener. They can optionally accept 1 argument, which represents the event that you are targetting.</li>
+    <pre><code>
+        //BASIC EVENT LISTENER
+
+        var h1 = document.querySelector('h1');
+        h1.addEventListener('click', <span class="highlight-block">function(e) {
+            console.log(e);
+        });</span>
+
+        //NOTICE the highlighted section. What does it look like that we've seen before?
+    </code></pre>
+                </ul>
+                <ul><a href="https://developer.mozilla.org/en-US/docs/Glossary/Callback_function">Callback Functions</a>
+                    <li>A function that is passed to another function as an argument, which is then executed inside that function.</li>
+                    <li>Can be used syncronously, or asyncronously (more on that later)</li>
+                </ul>
+                <ul>Now that you understand callbacks, let's look at some other event listeners
+                    <ul><h3>Keyboard Events:</h3>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/Events/keydown">Keydown</a></li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/Events/keypress">Keypress</a></li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/Events/keyup">Keyup</a></li>
+                    </ul>
+                        <ul><h3>Mouse Events:</h3>
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/Events/click">Click</a></li>
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/Events/mouseenter">Mouseenter</a></li>
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/Events/mouseover">Mouseover</a></li>
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/Events/mousemove">Mousemove</a></li>
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/Events/mousedown">Mousedown</a></li>
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/Events/mouseleave">Mouseleave</a></li>
+                        </ul>
+                    <p>A comprehensive list of all the DOM events can be found <a href="https://developer.mozilla.org/en-US/docs/Web/Events">here</a>.</p>
+                </ul>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Let's Try It!</h2>
+            </aside>
+            <main class="col-sm-9">
+                <ol class="points">
+                    <li>On your day6 branch, create a basic HTML mockup with a button, a div with some height and background color, and an h1 with some text</li>
+                    <li>
+                        <ul>Create event listeners for each:
+                            <li>For the button, alert the user with a message when they click it.</li>
+                            <li>For the div, change the color of the background when their mouse goes into the div.</li>
+                            <li>For the h1, change the color of the text the user <em>releases</em> any key.</li>
+                        </ul>
+                    </li>
+                    <li>Not Tough Enough? Try redirecting the user's browser to facebook when the click anywhere on the page.</li>
+                </ol>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Take Home</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p>Write a program that converts temperatures. It should:</p>
+                <ol class="points">
+                    <li>Ask your user to give you a scale (Celcius or Fahrenheit) and the tempurature they want to convert.
+                        <small>So if they give you 90 Fahrenheit, they would want you to convert 90 degrees Fahrenheit to whatever that is in Celcius</small>
+                    </li>
+                    <li>Employ a function that accepts those two values as arguments: temperature and scale (either celcius or fahrenheit) and converts the tempurature they gave you to the opposite scale.</li>
+                    <li>Display the temperature in an h3 with minimal styling.</li>
+                    <li>From that point on, when the user clicks on the h3, run the function to convert the temperature back and forth between Celcius and Fahrenheit.</li>
+                    <li>Display the converted temperature in the h3 each time it is changed.</li>
+                </ol>
+            </main>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

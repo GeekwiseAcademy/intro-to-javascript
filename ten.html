@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Intro to Javascript</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- <body class="show-reminder" id="day_ten"> -->
+    <header>
+        <div class="logo"><a href="index.html"><img class="img-responsive" src="img/geekwise_owl.png" alt="geekwise owl logo"></a></div>
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav nav-pills navbar-nav pull-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Days <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li role="presentation"><a href="one.html">dayOne</a></li>
+                            <li role="presentation"><a href="two.html">dayTwo</a></li>
+                            <li role="presentation"><a href="three.html">dayThree</a></li>
+                            <li role="presentation"><a href="four.html">dayFour</a></li>
+                            <li role="presentation"><a href="five.html">dayFive</a></li>
+                            <li role="presentation"><a href="six.html">daySix</a></li>
+                            <li role="presentation"><a href="seven.html">daySeven</a></li>
+                            <li role="presentation"><a href="eight.html">dayEight</a></li>
+                            <li role="presentation"><a href="nine.html">dayNine</a></li>
+                            <li role="presentation"><a href="ten.html">dayTen</a></li>
+                            <li role="presentation"><a href="eleven.html">dayEleven</a></li>
+                            <li role="presentation"><a href="final.html">finalProject</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>JS Timers</h2>
+            </aside>
+            <main class="col-sm-9">
+                <ul class="points">
+                    <li>Sometimes in our code, we may want to delay some action. Enter <a href="https://developer.mozilla.org/en-US/Add-ons/Code_snippets/Timers">Timers</a>!</li>
+                    <li>setTimeout();
+                        <pre><code>
+    < !-- HTML Code -->
+    < button onclick="delayAlert()">Start the Timer< /button>
+
+    //JS Code
+    var timer;
+
+    function delayAlert() {
+        timer = setTimeout(newAd, 3000);
+    };
+
+    function newAd() {
+        alert('Want to buy some stuff?');
+    };
+                        </code></pre>
+                    </li>
+                    <li>clearTimeout();
+                            <pre><code>
+    function cancelAd() {
+        clearTimeout(newAd);
+    };
+                            </code></pre>
+                    </li>
+                    <li>setInterval();
+    <pre><code>
+        var repeatGreet = setInterval(greetUser, 1000);
+
+        function greetUser() {
+            alert('Hello!!!!!!');
+        };
+    </code></pre>
+                    </li>
+                    <li>clearInterval();
+                        <pre><code>
+    function cancelGreeting() {
+        clearInterval(repeatGreet);
+    };
+                        </code></pre>
+                    </li>
+                    <li>Let's try it!
+                        <ol>
+                            <li>Write a program that prompts the user for a time (in ms) they want to wait.</li>
+                            <li>Take the response and create a setTimeout. After the time expires, alert the user with a random quote.</li>
+                            <li>Add an interval that prompts for a number of how often the user wants to be alerted and have the message change every time the alert happens. HINT: DO NOT write multiple messages, have JS change it for you.</li>
+                            <li>Create two buttons: one that cancels the timeout, and one that cancels the interval.</li>
+                        </ol>
+                    </li>
+                </ul>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Storing Values</h2>
+            </aside>
+            <main class="col-sm-9">
+                <ul class="points">
+                    <li>Often, we will want to store data in an easily retrievable space that is faster than accessing a Database. Enter Browser Storage!</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage">Session Storage</a> lasts only for one session. Sessions last as long as the browser is open and persists past refreshes.</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">Local Storage</a> lasts for as long as developer allows it, persists across several sessions indefinitely.</li>
+                    <li>setItem();, getItem();, and clearItem();</li>
+                    <li>Let's try it!
+                        <ul>
+                            <li>Mock up a log in (prompt for un and pw) and store the username in local storage under "user."</li>
+                            <li>Create buttons to change the value of user, clear the value of user, and alert the value of user.</li>
+                            <li>How can this be used in our final project?</li>
+                        </ul>
+                    </li>
+                    <li>How can we use this in our todo app?</li>
+                </ul>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>IIFE</h2>
+            </aside>
+            <main class="col-sm-9">
+                <ul class="points">
+                    <li>Immediately Invoked Function Expression: basically an anonymous function that gets called immediately.</li>
+                    <li>Benefits: mainly around keeping scope contained where you want it. Consider the following:
+                        <pre><code>
+    var v = 1;
+    var getValue = (function(x) {
+        return function() {
+            alert(x);
+        };
+    }(v));
+    v = 2;
+
+    getValue();
+    //What do you expect the value that is alerted to be? copy this code and run it to see...
+                        </code></pre>
+                    </li>
+                    <li>This is the scope binding I mentioned earlier. The main usefulness of this comes in frameworks, but they are useful when you want to constrain the scope of something.</li>
+                </ul>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Quick word on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode">Strict Mode</a></h2>
+            </aside>
+            <main class="col-sm-9">
+                <p>You may have seen 'use strict' in examples as you have been Googling answers. The purpose of this setting is to intentionally change the rules that your JS code applies to itself. It is a variant of JavaScript, and it has some complicated implications. In a nutshell, strict mode:
+                    <ol>
+                        <li>Converts mistakes to errors</li>
+                        <li>Sometimes allows for optimization of how the compiler builds your JS</li>
+                        <li>Introduces future rules that will be adopted into JS in the coming versions of JS by forcing partial adherence to those rules.</li>
+                    </ol>
+                </p>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Take Home</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p>If you have not already, you can start utilizing event handlers in your code along with your array structures.</p>
+                <ul>
+                    <li>When the submit button is clicked on your todo form, get the user input and add it to an array</li>
+                    <li>Create a function that will clear out the list and loop over the array to print out all of the todo items.</li>
+                    <li>Each todo item should have a button to delete the item and a checkbox to mark the item as finished by using strikethrough on the text for a handful of seconds, then remove the todo item and move it to the "done" list.</li>
+                    <li>The "done" list should be stored somewhere that persists so the user can come back to it. It should also disappear from the view after a couple minutes, but be able to be recalled by the click of a button.</li>
+                </ul>
+            </main>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

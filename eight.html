@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Intro to Javascript</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- <body class="show-reminder" id="day_eight"> -->
+    <header>
+        <div class="logo"><a href="index.html"><img class="img-responsive" src="img/geekwise_owl.png" alt="geekwise owl logo"></a></div>
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav nav-pills navbar-nav pull-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Days <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li role="presentation"><a href="one.html">dayOne</a></li>
+                            <li role="presentation"><a href="two.html">dayTwo</a></li>
+                            <li role="presentation"><a href="three.html">dayThree</a></li>
+                            <li role="presentation"><a href="four.html">dayFour</a></li>
+                            <li role="presentation"><a href="five.html">dayFive</a></li>
+                            <li role="presentation"><a href="six.html">daySix</a></li>
+                            <li role="presentation"><a href="seven.html">daySeven</a></li>
+                            <li role="presentation"><a href="eight.html">dayEight</a></li>
+                            <li role="presentation"><a href="nine.html">dayNine</a></li>
+                            <li role="presentation"><a href="ten.html">dayTen</a></li>
+                            <li role="presentation"><a href="eleven.html">dayEleven</a></li>
+                            <li role="presentation"><a href="final.html">finalProject</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Review Take Home</h2>
+            </aside>
+            <main class="col-sm-9">
+                <ul class="points">
+                    <li>Let's finish the FizzBuzz</li>
+                    <li>How did you solve the take-home?</li>
+                </ul>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Forms</h2>
+            </aside>
+            <main class="col-sm-9">
+                <ul class="points">
+                    <li>Forms can get really complicated, so let's go through the basics</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/forms">Forms</a> with the details
+                        <ul>
+                            <li>Nameless forms can be accessed by document.forms[index]</li>
+                            <li>Named forms can be accessed by name</li>
+                            <li>Child inputs on a form can be accessed like so:
+        <pre><code>
+        //HTML
+        < form class="" action="index.html" method="post" name="loginForm">
+            < input type="text" name="email" value="email">
+            < input type="text" name="password" value="password">
+        </ form>
+
+        //JS
+        let loginForm = document.forms.loginForm;
+        console.log(loginForm["password"]);
+
+        //console
+        < input type="text" name="password" value="password">
+        </code></pre>
+                            </li>
+                            <li>Accessing the "value" of an input</li>
+                            <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/submit">"submit"</a> input type</li>
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Sending_and_retrieving_form_data">Sending Form</a> data and all that goes with it.</li>
+                            <li>Action attributes declare where the form's info is being sent. (relative vs. absolute actions)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Form Submission and HTTP Methods</h2>
+            </aside>
+            <main class="col-sm-9">
+                <ul class="points">
+                    <li>HTTP Protocols: GET(no body) and POST(with req.body)</li>
+                    <li>Let's try both!
+                        <ul>
+                            <li>Create two forms, one that submits using a GET method and one that does so using a POST method</li>
+                        </ul>
+                    </li>
+                    <li>Using <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault">.preventDefault()</a> to stop the auto submit while we handle the form.</li>
+                    <li>Don't trust your users! Always use enctype and encryption in production.</li>
+                </ul>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>this</h2>
+            </aside>
+            <main class="col-sm-9">
+                <ul class="points">
+                    <li>What's <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this">"this"</a>?</li>
+                    <li>First, you have to comprehend the <a href="https://developer.mozilla.org/en-US/docs/Glossary/Call_stack">call stack.</a></li>
+                    <li>Global Context:
+                        <ul>
+                            <li>Console.log(this) in the scripts.js file.</li>
+                            <li>Set some vars in the global namespace (same place as you logged this) and then log out this.varName</li>
+                        </ul>
+                    </li>
+                    <li>Bound Context
+                        <ul>
+                            <li>Now, create an event listener on a DOM node for 'click' and inside the callback, console.log(this);</li>
+                            <li><em>this</em> is dependent upon the context it was called in...</li>
+                            <li>Let's see this in action:
+                                <ol>
+                                    <li>
+                                        Create an object in your scripts.js file that looks like this:
+                                        <pre><code>
+        var obj = {
+            a: checkScope
+        }
+                                        </code></pre>
+                                    </li>
+                                    <li>Define checkScope outside of the object as a function that takes 0 arguments and just logs this.</li>
+                                    <li>Now, call checkScope in the global context, and then log out obj.a : Don't worry, we'll learn about object next class!</li>
+                                </ol>
+                            </li>
+                            <li>Four ways to bind <em>this</em>:
+                                <ol>
+                                <li>Use new (more on that next class)</li>
+                                <li>Explicit binding using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call">.call()</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply">.apply()</a>.</li>
+                                <li>Implicit binding by calling the function with a <em>context</em>;
+                                <pre><code>
+        function logThis() {
+            console.log( this );
+        }
+
+        var implicitBindingObject = {
+            answerToLife: 42,
+            logThis: logThis //notice that foo is called/referenced here, thus changing the calling context.
+        };
+
+        implicitBindingObject.logThis(); //Result will be the contents of the implicitBindingObject.
+                                </code></pre>
+                                </li>
+                                <li>Otherwise, default binding refers to the global context a.k.a. Window.</li>
+                            </ol>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Inline Context
+                        <ul>
+                            <li>If you call this inline (straight in your HTML code) it will return the DOM node it's attached to.</li>
+                            <li>Let's create a button with a click attribute that alerts this to see what we're talking about.</li>
+                        </ul>
+                    </li>
+                    <li>Make sense? Yeah, I didn't think so...</li>
+                    <li>I highly recommend <a href="https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch2.md">You Don't Know JS</a>, which is available for free on GitHub.</li>
+                </ul>
+            </main>
+        </div>
+         <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Scope</h2>
+            </aside>
+            <main class="col-sm-9">
+                <ul class="points">
+                    <li>The scope of what you're working on is closely tied to this in many ways.</li>
+                    <li>Basically, where do these vars, lets, and consts live? In their scope!</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Archive/Web/Scope_Cheatsheet">Cheatsheet</a> for scope.</li>
+                    <li>We will get more in-depth when we talk about Object creation and prototypes. For now, let's check the context/scope of what we already know.</li>
+                    <li>Do the following:
+                        <ol>
+                            <li>declare a var in the global context and define it with a string.</li>
+                            <li>create a function and declare the same var inside the function.</li>
+                            <li>console.log the var inside the function and outside the function.</li>
+                            <li>Do the same with a let, then again with a const.</li>
+                            <li>Knowing what you do about variables and functions, do the results make sense?</li>
+                        </ol>
+                    </li>
+                </ul>
+            </main>
+        </div>
+        <div class="row section">
+            <aside class="col-sm-3">
+                <h2>Take Home</h2>
+            </aside>
+            <main class="col-sm-9">
+                <p>Today we begin the final project in earnest. As such, I won't be going over take homes anymore, they will all pertain directly to your final</p>
+                <ul class="points">
+                    <li>Create a new repository for your ToDo App if you have not already on GitHub and add me as a contributor.</li>
+                    <li>Begin coding your HTML and CSS</li>
+                    <li>At a minumum your HTML should contain:
+                        <ol>
+                            <li> Two h1 tags with the titles of your lists ('todo' and 'done').</li>
+                            <li>An input for entering ToDo Items with a submit button.</li>
+                            <li>Two empty uls to hold the ToDo Items and the Done Items.</li>
+                        </ol>
+                    </li>
+                    <li>Your JS should be able to:
+                        <ol>
+                            <li>Access the input's value and the uls using DOM methods and store them in variables.</li>
+                            <li>When the submit button is clicked get the user input and add it to an array.</li>
+                            <li>Use whatever visual framework (or plain CSS styling) you like to make your page look good. Treat this like a product that you are building for a client. How would they want it to look and function?</li>
+                        </ol>
+                    </li>
+                    <li>Remember, this is the basic setup, or just the beginning.</li>
+                </ul>
+            </main>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
