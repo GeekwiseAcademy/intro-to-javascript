@@ -38,7 +38,7 @@ var sticky = {
     setTimeout(function(){ alert('Did you add, commit, and push your code from last class? Did you create a new branch for today?'); }, 2000);
   }
   if (bodyTag.className == 'welcome-msg') {
-    setTimeout(function(){ alert("Welcome to Geekwise Academy's Intro to JavaScript course. Here are some things you should know: Door code: 25829# WiFi: 'Bitwise' password: BUTTONBOX (all caps) Slack Channel: #intro-to-js"); }, 2000);
+    setTimeout(function(){ alert("Welcome to Geekwise Academy's Intro to JavaScript course. Here are some things you should know: Door code: 25829# WiFi: 'Bitwise' password: BUTTONBOX (all caps) Slack Channel: #intro-to-javascript"); }, 2000);
   }
 
   var checkAuth = function() {
